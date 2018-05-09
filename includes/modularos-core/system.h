@@ -1,6 +1,7 @@
 /*
  * Operating system for Atmel AVR microcontrollers
  * Copyright (c) 2015 Konrad Kusnierz <iryont@gmail.com>
+ * Copyright (c) 2018 Patryk Klimas <patryk.bajos@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,13 +22,13 @@
  * THE SOFTWARE.
  */
 
-#ifndef _RTOS_H
-#define _RTOS_H
+#ifndef _MODULAROSCORE_SYSTEM_H
+#define _MODULAROSCORE_SYSTEM_H
 
-#include "tasks.h"
-#include "asm.h"
-#include "scheduler.h"
-#include "mutex.h"
+#include <modularos-core/tasks.h>
+#include <modularos-core/asm.h>
+#include <modularos-core/scheduler.h>
+#include <modularos-core/mutex.h>
 
 void osInit();
 void osRun();

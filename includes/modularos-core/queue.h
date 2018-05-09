@@ -1,6 +1,7 @@
 /*
  * Operating system for Atmel AVR microcontrollers
  * Copyright (c) 2015 Konrad Kusnierz <iryont@gmail.com>
+ * Copyright (c) 2018 Patryk Klimas <patryk.bajos@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,27 +22,21 @@
  * THE SOFTWARE.
  */
 
-#ifndef _PORT_H
-#define _PORT_H
+#ifndef _MODULAROSCORE_QUEUE_H
+#define _MODULAROSCORE_QUEUE_H
 
-#include "pch.h"
+#include <stdio.h>
+#include <modularos-core/tasks.h>
 
-#define ENABLE_INTERRUPTS 	asm volatile("sei");
-#define DISABLE_INTERRUPTS 	asm volatile("cli");
+typedef struct {
+    TaskControlBlock **tasks;
+    uint8_t size;
+    uint8_t length;
+} Queue;
 
-// interrupts
-void osSetupTimerInterrupt();
-
-// atomic
-uint8_t osTAS(uint8_t *v);
-uint8_t osCAS(uint8_t *v, uint8_t p, uint8_t q);
-
-// stack
-uint8_t* osInitializeStack(uint8_t* topOfStack, void (*taskFunction)(void*), void* taskParameter);
-
-// yield
-void osNonSavableYield(void) __attribute__ ((naked));
-void osNonResumableYield(void) __attribute__ ((naked));
-void osResumableYield(void) __attribute__ ((naked));
+Queue* osQueueCreate();
+void osQueueDestroy(Queue *queue);
+void osQueueRemove(Queue *queue, TaskControlBlock *task);
+void osQueueInsert(Queue *queue, TaskControlBlock *task);
 
 #endif

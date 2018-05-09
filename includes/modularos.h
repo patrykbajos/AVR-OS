@@ -1,6 +1,7 @@
 /*
  * Operating system for Atmel AVR microcontrollers
  * Copyright (c) 2015 Konrad Kusnierz <iryont@gmail.com>
+ * Copyright (c) 2018 Patryk Klimas <patryk.bajos@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,22 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+#ifndef _MODULAROS_H
+#define _MODULAROS_H
 
-#ifndef _QUEUE_H
-#define _QUEUE_H
-
-#include <stdio.h>
-#include "tasks.h"
-
-typedef struct {
-    TaskControlBlock **tasks;
-    uint8_t size;
-    uint8_t length;
-} Queue;
-
-Queue* osQueueCreate();
-void osQueueDestroy(Queue *queue);
-void osQueueRemove(Queue *queue, TaskControlBlock *task);
-void osQueueInsert(Queue *queue, TaskControlBlock *task);
+#include <modularos-core/system.h>
 
 #endif

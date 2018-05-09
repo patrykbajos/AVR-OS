@@ -21,18 +21,18 @@
  * THE SOFTWARE.
  */
 
-#ifndef _SCHEDULER_H
-#define _SCHEDULER_H
+#ifndef _MODULAROSCORE_MUTEX_H
+#define _MODULAROSCORE_MUTEX_H
 
 #include <stdio.h>
-#include "tasks.h"
 
-void osSchedulerInit();
-void osWait(uint16_t wait);
-void osTaskExit();
-void osContextSwitch(int8_t resumable, int8_t incremental);
+typedef struct {
+    uint8_t atomic;
+} Mutex;
 
-TaskControlBlock* osCreateTask(void (*taskFunction)(void*), void *taskParameter, uint8_t taskStackSize, uint8_t taskPriority);
-void osTaskDestroy(TaskControlBlock *task);
+Mutex* osMutexCreate();
+void osMutexDestroy(Mutex *mutex);
+void osMutexLock(Mutex *mutex);
+void osMutexUnlock(Mutex *mutex);
 
 #endif

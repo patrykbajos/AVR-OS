@@ -1,6 +1,7 @@
 /*
  * Operating system for Atmel AVR microcontrollers
  * Copyright (c) 2015 Konrad Kusnierz <iryont@gmail.com>
+ * Copyright (c) 2018 Patryk Klimas <patryk.bajos@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,8 +22,8 @@
  * THE SOFTWARE.
  */
 
-#ifndef _TASKS_H
-#define _TASKS_H
+#ifndef _MODULAROSCORE_TASKS_H
+#define _MODULAROSCORE_TASKS_H
 
 #include <stdio.h>
 

@@ -1,6 +1,7 @@
 /*
  * Operating system for Atmel AVR microcontrollers
  * Copyright (c) 2015 Konrad Kusnierz <iryont@gmail.com>
+ * Copyright (c) 2018 Patryk Klimas <patryk.bajos@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,18 +22,18 @@
  * THE SOFTWARE.
  */
 
-#ifndef _MUTEX_H
-#define _MUTEX_H
+#ifndef _MODULAROSCORE_PCH_H
+#define _MODULAROSCORE_PCH_H
 
 #include <stdio.h>
-
-typedef struct {
-    uint8_t atomic;
-} Mutex;
-
-Mutex* osMutexCreate();
-void osMutexDestroy(Mutex *mutex);
-void osMutexLock(Mutex *mutex);
-void osMutexUnlock(Mutex *mutex);
+#include <stdlib.h>
+#include <limits.h>
+#include <string.h>
+#include <avr/io.h>
+#include <util/delay.h>
+#include <util/atomic.h>
+#include <avr/interrupt.h>
+#include <avr/eeprom.h>
+#include <compat/twi.h>
 
 #endif
