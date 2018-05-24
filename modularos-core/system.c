@@ -21,7 +21,7 @@
  * THE SOFTWARE.
  */
 
-#include "system.h"
+#include <modularos-core/system.h>
 
 void osInit()
 {

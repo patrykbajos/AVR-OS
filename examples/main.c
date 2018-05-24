@@ -22,7 +22,7 @@
  */
 
 #include <stdio.h>
-#include "system/system.h"
+#include <modularos.h>
 
 volatile int a = 0;
 Mutex *mutex = NULL;

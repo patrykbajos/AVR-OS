@@ -21,8 +21,8 @@
  * THE SOFTWARE.
  */
 
-#include "queue.h"
-#include "tasks.h"
+#include <modularos-core/queue.h>
+#include <modularos-core/tasks.h>
 
 // tasks queue
 Queue* osQueue = NULL;

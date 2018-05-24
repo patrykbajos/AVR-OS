@@ -22,8 +22,8 @@
  */
 
 #include <stdlib.h>
-#include "scheduler.h"
-#include "asm.h"
+#include <modularos-core/scheduler.h>
+#include <modularos-core/asm.h>
 
 // current task control block
 TaskControlBlock* volatile osCurrentTask = NULL;

@@ -22,8 +22,8 @@
  */
 
 #include <avr/interrupt.h>
-#include "asm.h"
-#include "scheduler.h"
+#include <modularos-core/asm.h>
+#include <modularos-core/scheduler.h>
 
 // save context of the current task (osTask)
 #define SAVE_CONTEXT                       \

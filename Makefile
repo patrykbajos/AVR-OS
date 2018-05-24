@@ -1,2 +1,0 @@
-clean:
-	rm -rH /bin

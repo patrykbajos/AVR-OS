@@ -22,7 +22,7 @@
  */
 
 #include <stdlib.h>
-#include "queue.h"
+#include <modularos-core/queue.h>
 
 Queue* osQueueCreate()
 {

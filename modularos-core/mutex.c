@@ -22,8 +22,8 @@
  */
 
 #include <stdlib.h>
-#include "mutex.h"
-#include "asm.h"
+#include <modularos-core/mutex.h>
+#include <modularos-core/asm.h>
 
 Mutex* osMutexCreate()
 {
