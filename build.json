@@ -1,0 +1,19 @@
+{
+    "build": {
+        "output_pattern": "{build_type}/{module}_{mcu}_{f_cpu}",
+        "build_type": "release",
+        "targets": "all",
+        "modules": ["modularos-core", "modularos-usart"],
+        "includes": "includes"
+    },
+    "targets": {
+        "atmega8": {
+            "f_cpus": [1000000,16000000],
+            "modules": "all"
+        },
+        "atmega16": {
+            "f_cpus": [16000000,1000000],
+            "modules": "all"
+        }
+    }
+}
