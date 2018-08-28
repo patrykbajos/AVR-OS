@@ -1,6 +1,4 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
@@ -14,7 +12,8 @@
         {
             "label": "update_configurations",
             "type": "shell",
-            "command": "python3 update_configurations.py"
+            "command": "python3 update_configurations.py",
+            "problemMatcher": []
         }
     ]
 }

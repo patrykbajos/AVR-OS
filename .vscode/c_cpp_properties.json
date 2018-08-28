@@ -1,4 +1,16 @@
 {
+    "env": {
+        "projectIncludes": [
+            "includes",
+            "modularos-core",
+            "modularos-usart"
+        ],
+        "gccLinuxIncludes": [
+            "/usr/lib/gcc/avr/8.1.0/include",
+            "/usr/lib/gcc/avr/8.1.0/include-fixed",
+            "/usr/lib/gcc/avr/8.1.0/../../../../avr/include"
+        ]
+    },
     "configurations": [
         {
             "name": "Mac",
@@ -6,9 +18,7 @@
                 "/usr/include",
                 "/usr/local/include",
                 "${workspaceFolder}",
-                "includes",
-                "modularos-core",
-                "modularos-usart"
+                "${currentIncludes}"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
@@ -36,9 +46,7 @@
                 "/usr/local/include",
                 "/usr/lib/clang/6.0.0/include",
                 "/usr/include",
-                "includes",
-                "modularos-core",
-                "modularos-usart"
+                "${currentIncludes}"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
@@ -64,9 +72,7 @@
             "includePath": [
                 "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include",
                 "${workspaceFolder}",
-                "includes",
-                "modularos-core",
-                "modularos-usart"
+                "${currentIncludes}"
             ],
             "defines": [
                 "_DEBUG",
