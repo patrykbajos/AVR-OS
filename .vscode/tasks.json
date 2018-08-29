@@ -4,7 +4,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "python3 build.py",
+            "command": "python3 -m buildz",
             "problemMatcher": [
                 "$gcc"
             ]
@@ -12,7 +12,7 @@
         {
             "label": "update_configurations",
             "type": "shell",
-            "command": "python3 update_configurations.py",
+            "command": "python3 -m buildz-update",
             "problemMatcher": []
         }
     ]
