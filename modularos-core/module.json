@@ -1,3 +1,8 @@
 {
-    "files": ["asm.c", "mutex.c", "queue.c", "scheduler.c", "system.c", "tasks.c"]
+    "files": ["asm.c", "mutex.c", "queue.c", "scheduler.c", "system.c", "tasks.c"],
+    "env": {
+        "avr-gcc": {
+            
+        }
+    }
 }

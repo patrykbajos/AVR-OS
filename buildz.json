@@ -1,32 +1,36 @@
 {
     "build": {
-        "output_pattern": "{build_type}/{module}_{target}_{f_cpu}",
         "build_type": "release",
-        "targets": "all",
-        "modules": ["modularos-core", "modularos-usart"],
-        "includes": "includes"
+        "targets": "all"
     },
+    "modules": ["modularos-core", "modularos-usart"],
     "toolchains": {
         "avr-gcc": {
-            "type": "avr-gcc",
-            "path": "avr-gcc"
+            "type": "AvrGccToolchain",
+            "output_pattern": "{module.name}_{target.name}_{env.fcpu}",
+            "conf": {
+                "gcc_path": "/usr/bin/avr-gcc"
+            },
+            "env": {
+                "includes": ["includes"]
+            }
         }
     },
     "targets": {
         "atmega8": {
             "modules": "all",
             "toolchain": "avr-gcc",
-            "toolchain_variables": {
+            "env": {
                 "mcu": "atmega8",
-                "f_cpu": [1000000,16000000]
+                "fcpu": [1000000, 16000000]
             }
         },
         "atmega16": {
             "modules": "all",
             "toolchain": "avr-gcc",
-            "toolchain_variables": {
-                "mcu": "atmega8",
-                "f_cpu": [16000000,1000000]
+            "env": {
+                "mcu": "atmega16",
+                "fcpu": [16000000, 1000000]
             }
         }
     }
