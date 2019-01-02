@@ -13,7 +13,7 @@
                 "gcc_path": "/usr/bin/avr-gcc"
             },
             "env": {
-                "defines": ["BUILD_TYPE={build.type}"],
+                "defines": ["BUILD_TYPE={build_type}"],
                 "includes": ["includes"]
             }
         }
