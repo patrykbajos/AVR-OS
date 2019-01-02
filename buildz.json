@@ -1,17 +1,19 @@
 {
     "build": {
-        "build_type": "release",
+        "type": "release",
         "targets": "all"
     },
     "modules": ["modularos-core", "modularos-usart"],
     "toolchains": {
         "avr-gcc": {
             "type": "AvrGccToolchain",
-            "output_pattern": "{module.name}_{target.name}_{env.fcpu}",
+            "output_dir": "{build_type}",
+            "output_pattern": "{module_name}_{target_name}_{env[fcpu]}",
             "conf": {
                 "gcc_path": "/usr/bin/avr-gcc"
             },
             "env": {
+                "defines": ["BUILD_TYPE={build.type}"],
                 "includes": ["includes"]
             }
         }
