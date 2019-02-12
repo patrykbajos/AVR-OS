@@ -4,5 +4,6 @@
         "avr-gcc": {
             
         }
-    }
+    },
+    "packaging": "static"
 }

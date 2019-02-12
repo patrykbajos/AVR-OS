@@ -1,2 +1,8 @@
-[module]
-files=usart.c
+{
+    "files": ["usart.c"],
+    "env": {
+        "avr-gcc": {
+            
+        }
+    }
+}
